@@ -9,4 +9,4 @@ RUN PHANTOMJS_URL="https://circle-downloads.s3.amazonaws.com/circleci-images/cac
   && sudo mv /tmp/phantomjs-*-linux-x86_64/bin/phantomjs /usr/local/bin \
   && rm -rf /tmp/phantomjs.tar.bz2 /tmp/phantomjs-*
 
-CMD ["phantomjs","--webdriver=localhost:4422"]
+CMD ["phantomjs","--webdriver=localhost:4444"]
