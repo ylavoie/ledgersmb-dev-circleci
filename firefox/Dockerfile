@@ -1,6 +1,6 @@
-FROM        deepsweet/firefox-headless-remote
+FROM        selenium/standalone-firefox:3.141.59
 MAINTAINER  LedgerSMB  devel@lists.ledgersmb.org
 
 ENV LANG en_US.UTF-8
 
-EXPOSE 2828:4422
+EXPOSE 4444:4422
