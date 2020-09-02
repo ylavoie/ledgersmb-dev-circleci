@@ -1,4 +1,4 @@
-ARG version=11
+ARG version=12
 
 FROM        postgres:$version
 MAINTAINER  LedgerSMB  devel@lists.ledgersmb.org
