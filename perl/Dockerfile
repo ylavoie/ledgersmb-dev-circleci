@@ -195,13 +195,11 @@ RUN cd ~/project && \
   git checkout 1.6 && \
   cpm install --local-lib-contained=~/perl5 --no-test \
     --with-develop \
-    --with-feature=starman \
-    --with-feature=latex-pdf-images \
-    --with-feature=latex-pdf-ps \
-    --with-feature=openoffice \
-    --with-feature=xls \
-    --with-feature=edi \
-    --installdeps . && \
+    --feature=starman \
+    --feature=latex-pdf-ps \
+    --feature=openoffice \
+    --feature=xls \
+    --feature=edi && \
   git checkout 1.5 && \
   cpm install --local-lib-contained=~/perl5 --no-test \
     --with-develop \

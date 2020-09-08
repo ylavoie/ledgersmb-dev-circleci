@@ -8,6 +8,7 @@ on:
 
 jobs:
   primary:
+    #if: ${{ github.ref }} == "primary"
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -27,6 +28,7 @@ jobs:
       matrix:
         browser: ['chrome', 'firefox', 'phantomjs']
     needs: primary
+    #if: ${{ github.ref == matrix.browser }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
