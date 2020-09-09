@@ -14,7 +14,7 @@ jobs:
       uses: whoan/docker-build-with-cache-action@v5
       with:
         username: ${{ github.actor }}
-        password: ${{ secrets.DOCKER_TOKEN }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         image_name: ${{ github.repository_owner }}/ledgersmb_circleci-primary
         image_tag: latest
         context: primary
@@ -33,7 +33,7 @@ jobs:
       uses: whoan/docker-build-with-cache-action@v5
       with:
         username: ${{ github.actor }}
-        password: ${{ secrets.DOCKER_TOKEN }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         image_name: ${{ github.repository_owner }}/ledgersmb_circleci-${{ matrix.browser }}
         image_tag: latest
         push_git_tag: true
@@ -51,7 +51,7 @@ jobs:
       uses: whoan/docker-build-with-cache-action@v5
       with:
         username: ${{ github.actor }}
-        password: ${{ secrets.DOCKER_TOKEN }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         image_name: ${{ github.repository_owner }}/ledgersmb_circleci-perl
         image_tag: ${{ matrix.version }}
         build_extra_args: "--build-arg perl=${{ matrix.version }}"
@@ -72,7 +72,7 @@ jobs:
       uses: whoan/docker-build-with-cache-action@v5
       with:
         username: ${{ github.actor }}
-        password: ${{ secrets.DOCKER_TOKEN }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         image_name: ${{ github.repository_owner }}/ledgersmb_circleci-postgres
         image_tag: ${{ matrix.version }}
         build_extra_args: "--build-arg postgres=${{ matrix.version }}"
