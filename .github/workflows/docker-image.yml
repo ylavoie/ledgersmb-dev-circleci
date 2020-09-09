@@ -16,7 +16,7 @@ jobs:
         username: ${{ github.repository_owner }}
         password: "${{ secrets.GITHUB_TOKEN }}"
         registry: docker.pkg.github.com
-        image_name: ${{ github.repository_owner }}/ledgersmb_circleci-primary
+        image_name: ${{ github.repository_owner }}/ledgersmb_circleci-primary/latest
         image_tag: latest
         context: primary
         push_git_tag: true
@@ -36,7 +36,7 @@ jobs:
         username: ${{ github.repository_owner }}
         password: "${{ secrets.GITHUB_TOKEN }}"
         registry: docker.pkg.github.com
-        image_name: ${{ github.repository_owner }}/ledgersmb_circleci-${{ matrix.browser }}
+        image_name: ${{ github.repository_owner }}/ledgersmb_circleci-${{ matrix.browser }}/latest
         image_tag: latest
         push_git_tag: true
         context: ${{ matrix.browser }}
@@ -55,7 +55,7 @@ jobs:
         username: ${{ github.repository_owner }}
         password: "${{ secrets.GITHUB_TOKEN }}"
         registry: docker.pkg.github.com
-        image_name: ${{ github.repository_owner }}/ledgersmb_circleci-perl
+        image_name: ${{ github.repository_owner }}/ledgersmb_circleci-perl/${{ matrix.version }}
         image_tag: ${{ matrix.version }}
         build_extra_args: "--build-arg perl=${{ matrix.version }}"
         push_git_tag: true
@@ -77,7 +77,7 @@ jobs:
         username: ${{ github.repository_owner }}
         password: "${{ secrets.GITHUB_TOKEN }}"
         registry: docker.pkg.github.com
-        image_name: ${{ github.repository_owner }}/ledgersmb_circleci-postgres
+        image_name: ${{ github.repository_owner }}/ledgersmb_circleci-postgres/${{ matrix.version }}
         image_tag: ${{ matrix.version }}
         build_extra_args: "--build-arg postgres=${{ matrix.version }}"
         push_git_tag: true
