@@ -13,8 +13,9 @@ jobs:
     - name: Build and push to Docker Hub
       uses: whoan/docker-build-with-cache-action@v5
       with:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        username: ${{ github.repository_owner }}
+        password: "${{ secrets.GITHUB_TOKEN }}"
+        registry: docker.pkg.github.com
         image_name: ${{ github.repository_owner }}/ledgersmb_circleci-primary
         image_tag: latest
         context: primary
@@ -32,8 +33,9 @@ jobs:
     - name: Build and push to Docker Hub
       uses: whoan/docker-build-with-cache-action@v5
       with:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        username: ${{ github.repository_owner }}
+        password: "${{ secrets.GITHUB_TOKEN }}"
+        registry: docker.pkg.github.com
         image_name: ${{ github.repository_owner }}/ledgersmb_circleci-${{ matrix.browser }}
         image_tag: latest
         push_git_tag: true
@@ -50,8 +52,9 @@ jobs:
     - name: Build and push to Docker Hub
       uses: whoan/docker-build-with-cache-action@v5
       with:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        username: ${{ github.repository_owner }}
+        password: "${{ secrets.GITHUB_TOKEN }}"
+        registry: docker.pkg.github.com
         image_name: ${{ github.repository_owner }}/ledgersmb_circleci-perl
         image_tag: ${{ matrix.version }}
         build_extra_args: "--build-arg perl=${{ matrix.version }}"
@@ -71,8 +74,9 @@ jobs:
     - name: Build and push to Docker Hub
       uses: whoan/docker-build-with-cache-action@v5
       with:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        username: ${{ github.repository_owner }}
+        password: "${{ secrets.GITHUB_TOKEN }}"
+        registry: docker.pkg.github.com
         image_name: ${{ github.repository_owner }}/ledgersmb_circleci-postgres
         image_tag: ${{ matrix.version }}
         build_extra_args: "--build-arg postgres=${{ matrix.version }}"
