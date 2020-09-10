@@ -169,7 +169,7 @@ RUN cd ~/project && \
 
 # Use App::cpm to run cpan in parallel
 RUN cd ~/project && \
-  cpm install --local-lib-contained=~/perl5 --no-test \
+  cpm install --local-lib-contained=$HOME/perl5 --no-test \
 	--with-develop \
     --feature=starman \
     --feature=latex-pdf-ps \
@@ -177,7 +177,7 @@ RUN cd ~/project && \
     --feature=xls \
     --feature=edi && \
   git checkout 1.8 && \
-  cpm install --local-lib-contained=~/perl5 --no-test \
+  cpm install --local-lib-contained=$HOME/perl5 --no-test \
 	--with-develop \
     --feature=starman \
     --feature=latex-pdf-ps \
@@ -185,7 +185,7 @@ RUN cd ~/project && \
     --feature=xls \
     --feature=edi && \
   git checkout 1.7 && \
-  cpm install --local-lib-contained=~/perl5 --no-test \
+  cpm install --local-lib-contained=$HOME/perl5 --no-test \
 	--with-develop \
     --feature=starman \
     --feature=latex-pdf-ps \
@@ -193,7 +193,7 @@ RUN cd ~/project && \
     --feature=xls \
     --feature=edi && \
   git checkout 1.6 && \
-  cpm install --local-lib-contained=~/perl5 --no-test \
+  cpm install --local-lib-contained=$HOME/perl5 --no-test \
 	--with-develop \
     --feature=starman \
     --feature=latex-pdf-ps \
@@ -201,7 +201,7 @@ RUN cd ~/project && \
     --feature=xls \
     --feature=edi && \
   git checkout 1.5 && \
-  cpm install --local-lib-contained=~/perl5 --no-test \
+  cpm install --local-lib-contained=$HOME/perl5 --no-test \
 	--with-develop \
     --feature=starman \
     --feature=latex-pdf-ps \
@@ -210,7 +210,7 @@ RUN cd ~/project && \
   rm -rf ~/.cpanm
 
 RUN cd ~/project && \
-  cpm install --local-lib-contained=~/perl5 --no-test \
+  cpm install --local-lib-contained=$HOME/perl5 --no-test \
 		  Starman \
       URL::Encode URL::Encode::XS \
       Pod::ProjectDocs \
