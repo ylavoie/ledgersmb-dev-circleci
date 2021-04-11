@@ -1,12 +1,12 @@
 #!/bin/bash
 
-
 pgdata=${PGDATA:-/var/lib/postgresql/data}
 
-sed -i -e '
-s/^#fsync = on/fsync = off/;
-s/^#synchronous_commit = on/synchronous_commit = off/;
-' $pgdata/postgresql.conf
+sed -i -e "
+s/^#fsync = on/#fsync = off/;
+s/^#synchronous_commit = on/#synchronous_commit = off/;
+s/^#log_statement = 'none'/log_statement = all/;
+" $pgdata/postgresql.conf
 
 cat > "$pgdata/pg_hba.conf" <<'__END__'
 local   all             postgres                                trust
